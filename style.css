@@ -1,89 +1,82 @@
 body {
-    margin: 0;
-    font-family: 'Montserrat', Arial, sans-serif;
-    background-color: #f4f6f8;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background: linear-gradient(135deg, #1976d2, #42a5f5);
+    background-color: #4CAF50;
     color: white;
-    text-align: center;
     padding: 20px;
+    text-align: center;
 }
 
 header img {
     max-width: 100%;
     height: auto;
-    border-radius: 12px;
-    margin-bottom: 15px;
 }
 
-header h1 {
-    margin: 10px 0;
-    font-size: 32px;
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background: #4CAF50;
+    padding: 0;
+}
+
+nav ul li ul li {
+    display: block;
+    padding: 10px;
 }
 
 main {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 0 15px;
-}
-
-section {
-    background: white;
     padding: 20px;
-    margin-bottom: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-h2 {
-    color: #1976d2;
-}
-
-.formula {
-    background: #e3f2fd;
-    padding: 10px;
-    border-left: 5px solid #1976d2;
-    font-weight: bold;
-    margin: 10px 0;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .example {
-    background: #fffde7;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #fbc02d;
+    background-color: #e3f2fd;
+    border-left: 5px solid #2196F3;
+    padding: 10px;
+    margin: 10px 0;
 }
 
-.exercise {
-    background: #e8f5e9;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 18px;
-}
-
-iframe {
-    width: 100%;
-    height: 315px;
-    border-radius: 12px;
-    border: none;
-}
-
-.time-box {
+#gallery {
     text-align: center;
-    padding: 20px;
-    background: #ede7f6;
-    border-radius: 10px;
-    font-size: 18px;
+}
+
+#gallery img {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+#slider {
+    margin: 20px 0;
 }
 
 footer {
-    text-align: center;
-    padding: 15px;
-    background: #1976d2;
+    background-color: #333;
     color: white;
-    margin-top: 40px;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
 }
+

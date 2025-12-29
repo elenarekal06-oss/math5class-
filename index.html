@@ -2,98 +2,97 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Математика 5 клас — Розподільна властивість множення</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- CSS -->
+    <title>Математика 5 клас - Розподільна властивість множення</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery та jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
 </head>
 <body>
-
 <header>
-    <img src="банер.png" alt="Математика 5 клас — Розподільна властивість множення">
-    <h1>Розподільна властивість множення</h1>
-    <p>Навчальний урок з математики для 5 класу</p>
+    <img src="банер.png" alt="Математика 5 клас - Розподільна властивість множення">
+    <nav>
+        <ul id="menu">
+            <li>Головна
+                <ul>
+                    <li><a href="#">Теорія</a></li>
+                    <li><a href="#">Приклади</a></li>
+                </ul>
+            </li>
+            <li>Вправи
+                <ul>
+                    <li><a href="#">Легкі</a></li>
+                    <li><a href="#">Середні</a></li>
+                    <li><a href="#">Складні</a></li>
+                </ul>
+            </li>
+            <li>Контакти</li>
+        </ul>
+    </nav>
 </header>
 
 <main>
+    <h1>Розподільна властивість множення</h1>
 
-<section>
-    <h2><i class="fa-solid fa-book"></i> Теорія</h2>
-    <p>
-        <strong>Розподільна властивість множення</strong> дозволяє спростити обчислення,
-        якщо множення виконується на суму або різницю.
-    </p>
+    <p>Вітаю! Сьогодні ми вивчимо <strong>розподільну властивість множення</strong>, яка допомагає швидко обчислювати приклади.</p>
 
-    <p class="formula">
-        a × (b + c) = a × b + a × c
-    </p>
-
-    <p class="formula">
-        a × (b − c) = a × b − a × c
-    </p>
-</section>
-
-<section>
-    <h2><i class="fa-solid fa-pen"></i> Приклади</h2>
+    <h2>Правило:</h2>
+    <p>Якщо потрібно помножити число на суму або різницю, можна помножити його на кожен доданок окремо, а потім скласти або відняти результати.</p>
 
     <div class="example">
-        <strong>Приклад 1:</strong><br>
-        3 × (4 + 5) = 3 × 4 + 3 × 5 = 12 + 15 = <strong>27</strong>
+        <strong>Приклад 1:</strong> 3 × (4 + 5) = 3 × 4 + 3 × 5 = 12 + 15 = 27
     </div>
 
     <div class="example">
-        <strong>Приклад 2:</strong><br>
-        6 × (10 − 4) = 6 × 10 − 6 × 4 = 60 − 24 = <strong>36</strong>
+        <strong>Приклад 2:</strong> 6 × (10 - 4) = 6 × 10 - 6 × 4 = 60 - 24 = 36
     </div>
-</section>
 
-<section>
-    <h2><i class="fa-solid fa-list-check"></i> Вправи</h2>
-
-    <div class="exercise">
-        1) 5 × (2 + 7) = ?<br>
-        2) 4 × (6 − 3) = ?<br>
-        3) 7 × (3 + 5) = ?
+    <h2>Галерея</h2>
+    <div id="gallery">
+        <img src="example1.png" alt="Приклад 1">
+        <img src="example2.png" alt="Приклад 2">
+        <img src="example3.png" alt="Приклад 3">
     </div>
-</section>
 
-<section>
-    <h2><i class="fa-solid fa-video"></i> Відеоурок</h2>
-
-    <iframe
-        src="https://www.youtube.com/embed/R-XjMleQ3tU"
-        title="Розподільна властивість множення"
-        allowfullscreen>
-    </iframe>
-</section>
-
-<section>
-    <h2><i class="fa-solid fa-clock"></i> Поточний час</h2>
-
-    <div class="time-box">
-        Час на комп’ютері користувача відображається автоматично
-    </div>
-</section>
-
-<section>
-    <h2><i class="fa-solid fa-flag"></i> Висновок</h2>
-    <p>
-        Розподільна властивість множення допомагає розкладати складні вирази
-        на простіші, що робить обчислення швидшими та зрозумілішими.
-    </p>
-</section>
-
+    <h2>Слайдер для чисел</h2>
+    <p>Виберіть число: <span id="slider-value">50</span></p>
+    <div id="slider"></div>
 </main>
 
 <footer>
-    <p>© 2025 Математика 5 клас | Навчальний сайт</p>
+    <p>Всі права захищені &copy; 2025</p>
 </footer>
+
+<script>
+$(function() {
+    // Слайдер
+    $("#slider").slider({
+        value:50,
+        min:0,
+        max:100,
+        slide: function(event, ui) {
+            $("#slider-value").text(ui.value);
+        }
+    });
+
+    // Випадне меню
+    $("#menu li").hover(
+        function() { $(this).children('ul').slideDown(200); },
+        function() { $(this).children('ul').slideUp(200); }
+    );
+
+    // Галерея як слайдер jQuery UI
+    $("#gallery img:gt(0)").hide(); // ховаємо всі крім першого
+    setInterval(function(){
+        $('#gallery :first-child').fadeOut()
+           .next('img').fadeIn()
+           .end().appendTo('#gallery');
+    }, 3000);
+});
+</script>
 
 </body>
 </html>
