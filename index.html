@@ -3,55 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <title>Математика 5 клас - Розподільна властивість множення</title>
+
+    <!-- Bootstrap 4 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <!-- Твій CSS -->
     <link rel="stylesheet" href="style.css">
 
     <!-- jQuery та jQuery UI -->
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
-
 </head>
+
 <body>
-<header>
-    <img src="банер.png" alt="Математика 5 клас - Розподільна властивість множення">
-    <nav>
-        <ul id="menu">
-            <li>Головна
-                <ul>
-                    <li><a href="#">Теорія</a></li>
-                    <li><a href="#">Приклади</a></li>
-                </ul>
-            </li>
-            <li>Вправи
-                <ul>
-                    <li><a href="#">Легкі</a></li>
-                    <li><a href="#">Середні</a></li>
-                    <li><a href="#">Складні</a></li>
-                </ul>
-            </li>
-            <li>Контакти</li>
-        </ul>
-    </nav>
+
+<header class="bg-light p-3">
+    <div class="container text-center">
+        <img src="банер.png"
+             class="img-fluid"
+             alt="Математика 5 клас - Розподільна властивість множення">
+
+        <!-- старе меню НЕ чіпаємо -->
+        <nav>
+            <ul id="menu">
+                <li>Головна
+                    <ul>
+                        <li><a href="#">Теорія</a></li>
+                        <li><a href="#">Приклади</a></li>
+                    </ul>
+                </li>
+                <li>Вправи
+                    <ul>
+                        <li><a href="#">Легкі</a></li>
+                        <li><a href="#">Середні</a></li>
+                        <li><a href="#">Складні</a></li>
+                    </ul>
+                </li>
+                <li>Контакти</li>
+            </ul>
+        </nav>
+    </div>
 </header>
 
-<main>
-    <h1>Розподільна властивість множення</h1>
+<main class="container mt-4">
+    <h1 class="text-center">Розподільна властивість множення</h1>
 
-    <p>Вітаю! Сьогодні ми вивчимо <strong>розподільну властивість множення</strong>, яка допомагає швидко обчислювати приклади.</p>
+    <p>
+        Вітаю! Сьогодні ми вивчимо
+        <strong>розподільну властивість множення</strong>,
+        яка допомагає швидко обчислювати приклади.
+    </p>
 
     <h2>Правило:</h2>
-    <p>Якщо потрібно помножити число на суму або різницю, можна помножити його на кожен доданок окремо, а потім скласти або відняти результати.</p>
+    <p>
+        Якщо потрібно помножити число на суму або різницю,
+        можна помножити його на кожен доданок окремо.
+    </p>
 
     <div class="example">
-        <strong>Приклад 1:</strong> 3 × (4 + 5) = 3 × 4 + 3 × 5 = 12 + 15 = 27
+        <strong>Приклад 1:</strong>
+        3 × (4 + 5) = 3 × 4 + 3 × 5 = 27
     </div>
 
     <div class="example">
-        <strong>Приклад 2:</strong> 6 × (10 - 4) = 6 × 10 - 6 × 4 = 60 - 24 = 36
+        <strong>Приклад 2:</strong>
+        6 × (10 − 4) = 6 × 10 − 6 × 4 = 36
     </div>
 
     <h2>Галерея</h2>
-    <div id="gallery">
+    <div id="gallery" class="mb-3">
         <img src="example1.png" alt="Приклад 1">
         <img src="example2.png" alt="Приклад 2">
         <img src="example3.png" alt="Приклад 3">
@@ -60,11 +83,19 @@
     <h2>Слайдер для чисел</h2>
     <p>Виберіть число: <span id="slider-value">50</span></p>
     <div id="slider"></div>
+
+    <!-- Bootstrap-елемент (для лаби 8) -->
+    <button class="btn btn-primary mt-3">
+        Перевірити знання
+    </button>
 </main>
 
-<footer>
-    <p>Всі права захищені &copy; 2025</p>
+<footer class="bg-dark text-white text-center p-3 mt-4">
+    <p>Всі права захищені © 2025</p>
 </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
 $(function() {
@@ -84,12 +115,15 @@ $(function() {
         function() { $(this).children('ul').slideUp(200); }
     );
 
-    // Галерея як слайдер jQuery UI
-    $("#gallery img:gt(0)").hide(); // ховаємо всі крім першого
+    // Галерея
+    $("#gallery img:gt(0)").hide();
     setInterval(function(){
-        $('#gallery :first-child').fadeOut()
-           .next('img').fadeIn()
-           .end().appendTo('#gallery');
+        $('#gallery :first-child')
+            .fadeOut()
+            .next('img')
+            .fadeIn()
+            .end()
+            .appendTo('#gallery');
     }, 3000);
 });
 </script>
